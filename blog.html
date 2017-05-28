@@ -1,0 +1,36 @@
+---
+layout: default
+title: Blog
+description: GoldenRipe is dedicated to creating apps and websites as tools for understanding matters of faith, life, and history.
+permalink: /blog/
+---
+
+<main class="blog">
+  <header class="hero">
+    <div class="row">
+      <div class="col _span-12">
+        <h1>Blog</h1>
+      </div>
+    </div>
+  </header>
+
+  <div class="row">
+    <div class="col _span-12">
+      {% include breadcrumbs.html %}
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="row">
+      <div class="col _span-12">
+        {% for post in site.posts %}
+          {% assign date_format = site.minima.date_format | default: "%b %-d, %Y" %}
+          <span class="post-meta">{{ post.date | date: date_format }}</span>
+          <h2>
+            <a class="post-link" href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
+          </h2>
+          {{post.content}}
+        {% endfor %}
+      </div>
+    </div>
+</main>

@@ -1,0 +1,16 @@
+.Breadcrumbs {
+  @include unstyled-list;
+  padding: 1rem 0;
+
+  > li {
+    display: inline;
+  }
+  > li a {
+    @include font-weight-semibold;
+  }
+  > li:not(:last-child)::after {
+    display: inline-block;
+    content: "/";
+    padding: 0 .5rem;
+  }
+}

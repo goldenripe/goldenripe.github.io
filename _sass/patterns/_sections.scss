@@ -1,0 +1,55 @@
+
+.section {
+  @include section;
+  &._dark {
+    @include section-color($gray-darkest, $gray-light);
+    h2,
+    h3,
+    .lead {
+      color: $white;
+    }
+  }
+  &._gray {
+    @include section-color($gray-lightest);
+  }
+  &._teal {
+    @include section-color($teal);
+    a {
+      color: $color-text;
+      text-decoration: underline;
+      &:hover {
+        color: $gray-lighter;
+      }
+    }
+  }
+  &._centered {
+    @include section-alignment('center');
+  }
+  &._bordered {
+    border-top: 1px solid $gray-lighter;
+  }
+  > .row + .row {
+    margin-top: 3rem;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .section {
+    .col._pad-bottom {
+      padding-bottom: 4.5rem;
+    }
+  }
+}
+
+// Increase full bleed height when base font size goes up
+@media screen and (min-width: 1060px) {
+  .section {
+    .col._pad-right {
+      padding-right: 9.375% !important;
+    }
+
+    .col._pad-left {
+      padding-left: 9.375% !important;
+    }
+  }
+}

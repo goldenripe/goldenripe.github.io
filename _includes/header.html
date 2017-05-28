@@ -1,0 +1,13 @@
+<header class="mainnav" role="banner">
+  <a class="mainnav-logo" href="{{ "/" | relative_url }}">
+    <img alt="GoldenRipe Logo" src="/images/goldenripe-black.svg" />
+  </a>
+
+  <nav class="mainnav-nav">
+    <ul class="mainnav-links">
+      {% for page in site.header_pages %}
+      <li><a class="mainnav-link" href="{{ page.url }}">{{ page.title | escape }}</a></li>
+      {% endfor %}
+    </ul>
+  </nav>
+</header>
