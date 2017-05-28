@@ -41,7 +41,6 @@
 	@extend %headline-no-bottom-margin;
 	@include _headline-line-height($font-size-small);
 	@include font-size-small;
-	@include spaced-out;
 	padding-top: pxToRem($line-height-base-px / 2);
 	padding-bottom: pxToRem($line-height-base-px / 2);
 }
