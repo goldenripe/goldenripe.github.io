@@ -31,6 +31,8 @@ header_pages:
     subpages:
     - title: The Way
       url: http://theway.goldenripe.org
+  - title: Partner
+    url: /together/
   - title: Donate
     url: \#
 
