@@ -22,12 +22,17 @@ url: "https://goldenripe.org" # the base hostname & protocol for your site, e.g.
 permalink: /blog/:title/
 
 header_pages:
-  - title: Partnership
-    url: /together/
   - title: Blog
     url: /blog/
-  - title: The Way
-    url: http://theway.goldenripe.org
+  - title: About Us
+    url: /about/
+  - title: Resources
+    url: \#
+    subpages:
+    - title: The Way
+      url: http://theway.goldenripe.org
+  - title: Donate
+    url: \#
 
 # Build settings
 markdown: kramdown
@@ -36,3 +41,9 @@ gems:
 exclude:
   - Gemfile
   - Gemfile.lock
+
+sass:
+  sass_dir: assets/scss
+  load_paths:
+    - node_modules/bootstrap-sass/assets/stylesheets
+  style: compressed

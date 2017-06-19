@@ -1,13 +1,39 @@
-<header class="mainnav" role="banner">
-  <a class="mainnav-logo" href="{{ "/" | relative_url }}">
-    <img alt="GoldenRipe Logo" src="/images/goldenripe-black.svg" />
-  </a>
+<nav id="fixedTopNav" class="navbar navbar-solid navbar-fixed-top main-navigation" itemscope="" itemtype="https://schema.org/SiteNavigationElement"
+  role="navigation">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" on="tap:sidebar.open">
+          <span class="sr-only">Open navigation</span>
+          <i class="fa fa-bars" aria-hidden="true"></i>
+        </button>
 
-  <nav class="mainnav-nav">
-    <ul class="mainnav-links">
-      {% for page in site.header_pages %}
-      <li><a class="mainnav-link" href="{{ page.url }}">{{ page.title | escape }}</a></li>
-      {% endfor %}
-    </ul>
-  </nav>
-</header>
+      <div class="navbar-brand" itemscope="" itemtype="https://schema.org/Organization">
+        <span itemprop="name" class="sr-only">GoldenRipe</span>
+        <a itemprop="url" href="{{ "/" | relative_url }}">
+          <img alt="GoldenRipe Logo" src="/images/goldenripe-inverse.svg" height="34" />
+        </a>
+      </div>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-nav-collapse">
+      <ul class="nav navbar-nav navbar-right" role="menu">
+
+        {% for page in site.header_pages %}
+          {% if page.subpages %}
+          <li class="dropdown">
+            <a href="{{ page.url }}" class="dropdown-toggle" data-toggle="dropdown">
+              <span>{{ page.title }}</span>
+            </a>
+
+            <ul class="dropdown-menu">
+              {% for item in page.subpages %}
+              <li><a href="{{item.url}}">{{item.title}}</a></li>
+              {% endfor %}
+            </ul>
+          </li>
+          {% else %}
+            <li><a href="{{ page.url }}"><span>{{ page.title }}</span></a></li>
+          {% endif %}
+        {% endfor %}
+      </ul>
+    </div>
+</nav>

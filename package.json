@@ -1,0 +1,14 @@
+{
+  "name": "goldenripe.github.io",
+  "version": "1.0.0",
+  "description": "GoldenRipe website",
+  "main": "package.json",
+  "repository": "git@github.com:goldenripe/goldenripe.github.io.git",
+  "author": "Eric Cecchi <eric@goldenripe.org>",
+  "license": "MIT",
+  "dependencies": {
+    "bootstrap": "4.0.0-alpha.6",
+    "bootstrap-sass": "^3.3.7",
+    "jquery": "^3.2.1"
+  }
+}

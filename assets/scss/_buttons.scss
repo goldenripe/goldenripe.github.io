@@ -1,0 +1,92 @@
+
+.btn {
+  border-radius: 2px;
+  font-size: 14px;
+  padding: 12px 0px;
+  text-align: center;
+  width: 150px;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+.btn-round {
+  border-radius: 30px;
+}
+
+.btn-charity-default {
+  border: 1px solid $yellow-700;
+  background-color: $yellow-700;
+  color: $blue-500;
+  font-weight: 700;
+}
+
+.btn-charity-default:hover {
+  background-color: #FFC903;
+}
+
+.btn-charity-default-o {
+  background-color: transparent;
+  color: #ffffff;
+  border: 1px solid #ffffff;
+  font-weight: 700;
+}
+
+.btn-charity-default-o:hover {
+  color: $blue-500;
+  background-color: #ffffff;
+}
+
+.btn-charity-dark-o {
+  background-color: transparent;
+  border: 1px solid $blue-500;
+  color: $blue-500;
+  font-weight: 700;
+}
+
+.btn-charity-dark-o:hover {
+  background-color: $blue-500;
+  color: #fff;
+}
+
+
+.btn-charity-dark {
+  background-color: $blue-500;
+  color: #fff;
+  font-weight: 700;
+}
+
+.btn-charity-dark:hover {
+  background-color: $blue-500;
+  color: #fff;
+}
+
+.btn.btn-block {
+  width: 100%;
+}
+
+.btn-group-lg>.btn,
+.btn-lg {
+  padding: 10px 16px;
+  font-size: 18px;
+  line-height: 1.3333333;
+  border-radius: 6px;
+  width: auto;
+}
+
+.btn-group-sm>.btn,
+.btn-sm {
+  padding: 5px 10px;
+  font-size: 12px;
+  line-height: 1.5;
+  border-radius: 3px;
+  width: auto;
+}
+
+.btn-group-xs>.btn,
+.btn-xs {
+  padding: 1px 5px;
+  font-size: 12px;
+  line-height: 1.5;
+  border-radius: 3px;
+  width: auto;
+}

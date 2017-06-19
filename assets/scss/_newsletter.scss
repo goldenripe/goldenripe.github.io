@@ -1,0 +1,26 @@
+
+.newsletter_wrapper {
+  background: #ffd52d;
+  padding: 10px;
+}
+
+.newsletter_inner_wrapper {
+  border: 2px dashed #1e414e;
+  padding: 50px 20px;
+}
+
+.newsletter_inner_wrapper h3 {
+  font-weight: bold;
+  line-height: 100%;
+  margin-top: 5px;
+}
+
+.newsletter_inner_wrapper button#subscribe-button {
+  margin-top: 0;
+}
+
+@media (max-width: 768px) {
+  .subscribe-button_box {
+    text-align: center;
+  }
+}

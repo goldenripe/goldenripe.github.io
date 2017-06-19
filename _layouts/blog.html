@@ -1,0 +1,69 @@
+---
+layout: default
+---
+
+{% assign date_format = site.minima.date_format | default: "%b %-d, %Y" %} {% include hero.html %}
+
+<section id="blog-page" class="section  bg-default">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-8 col-sm-12">
+        <div class="blog-intro">
+          {{ content }}
+        </div>
+
+
+        {% for post in site.posts %}
+        <article class="post">
+          <div class="row">
+            <div class="col-md-4">
+              <div class="post-thumbnail">
+                <a href="{{ post.url | relative_url }}" class="post-thumbnail-image" hidefocus="true" style="outline: none;"><span>More</span></a>
+
+                <img class="img-responsive" src="{{ post.featuredImage }}" alt="Featured Image">
+              </div>
+            </div>
+
+            <div class="col-md-8">
+              <div class="entry-meta">
+                <h3 class="entry-title">
+                  <a href="{{ post.url | relative_url }}" hidefocus="true" style="outline: none;">
+                    {{ post.title | escape }}
+                  </a>
+                </h3>
+
+                <div class="entry-meta-data">
+                  {% if post.author %}
+                    <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person"> by
+                      <span itemprop="name">{{ post.author }}</span>
+                    </span>
+                  {% endif %}
+
+                  <time class="entry-date" datetime="">
+                    <span class="blog-list-icon"><i class="fa fa-calendar"></i></span>
+                    {{ post.date | date: date_format }}
+                  </time>
+                  {% if categories %} •
+                    <span class="cat-links blog-list-icon">
+                      <i class="fa fa-bookmark"></i>
+                      {% for category in categories %}
+                        <a href="{{ site.url }}/{{ page.category-url }}/" hidefocus="true" style="outline: none;" rel="category">{{ category }}</a>{% unless forloop.last %},{% endunless %}
+                      {% endfor %}
+                    </span>
+                  {% endif %}
+                </div>
+              </div>
+
+              <div class="entry-content">
+                {{post.excerpt}}
+              </div>
+
+              <div class="entry-meta clearfix">
+                <a href="{{ post.url | relative_url }}" class="btn btn-charity-default btn-read-more" hidefocus="true" style="outline: none;"><span>Read More</span></a>
+                <a href="{{ post.url | relative_url }}" class="btn btn-charity-dark-o link-comment" hidefocus="true" style="outline: none;"><span>2 Comments</span></a>
+              </div>
+            </div>
+          </div>
+        </article>
+      {% endfor %}
+</section>

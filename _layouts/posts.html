@@ -1,0 +1,25 @@
+---
+layout: default
+---
+
+{% if post %}
+  {% assign categories = post.categories %}
+{% else %}
+  {% assign categories = page.categories %}
+{% endif %}
+
+{% include hero.html %}
+
+<section id="blog-page" class="section  bg-default">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-8 col-sm-12">
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+          <div class="entry-content">
+            {{ content }}
+          </div>
+        </article>
+
+        {% if site.disqus.shortname %} {% include disqus_comments.html %} {% endif %}
+      </div>
+</section>

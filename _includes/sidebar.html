@@ -1,0 +1,35 @@
+<amp-sidebar id="sidebar" layout="nodisplay" side="right" class="gr-sidebar">
+    <nav>
+        <button
+            class="gr-sidebar-close"
+            on="tap:sidebar.close"
+            aria-label="Close navigation"
+        >
+            &times;
+        </button>
+
+        <ul role="menu">
+            <li><a href="/" class="gr-nav-item">Home</a></li>
+
+            {% for page in site.header_pages %}
+            {% if page.subpages %}
+            <li class="dropdown">
+                <amp-accordion disable-session-states class="gr-dropdown">
+                  <section>
+                    <header>{{ page.title }}</header>
+
+                    <ul>
+                        {% for item in page.subpages %}
+                        <li><a href="{{item.url}}" class="gr-nav-item">{{item.title}}</a></li>
+                        {% endfor %}
+                    </ul>
+                  </section>
+                </amp-accordion>
+            </li>
+            {% else %}
+                <li><a href="{{ page.url }}" class="gr-nav-item">{{ page.title }}</a></li>
+            {% endif %}
+            {% endfor %}
+        </ul>
+    </nav>
+</amp-sidebar>

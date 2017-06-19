@@ -1,0 +1,42 @@
+.gr-sidebar {
+    padding: 4rem 2rem;
+    background: white;
+}
+
+.gr-sidebar-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: none;
+    border: none;
+    font-size: 4rem;
+}
+
+.gr-sidebar nav {
+    width: 300px;
+}
+
+.gr-sidebar .gr-dropdown header {
+    color: $blue-500;
+    &::after {
+        content: "+";
+        position: absolute;
+        right: 0;
+    }
+}
+
+.gr-sidebar .gr-dropdown header,
+.gr-sidebar .gr-dropdown-item,
+.gr-sidebar .gr-nav-item {
+    display: block;
+    background: none;
+    border: none;
+    padding: 1rem 0;
+    font-weight: bold;
+}
+
+.gr-dropdown {
+    ul {
+        padding-left: 3rem;
+    }
+}
