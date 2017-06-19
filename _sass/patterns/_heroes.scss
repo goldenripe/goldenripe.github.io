@@ -1,7 +1,0 @@
-
-.hero {
-  @include hero;
-  &._left {
-    @include hero-alignment('left');
-  }
-}
